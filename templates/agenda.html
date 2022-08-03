@@ -5,7 +5,19 @@
 </a>
 <ul>
   {% for evento in eventos %}
-  <li>{{evento.titulo}} - {{evento.get_data_evento}}</li>
+  <li>
+    <div class="row" style="width: 350px">
+      <div class="column" align="left">
+        <b>{{evento.titulo}}</b> <br />
+        {{evento.get_data_evento}}
+      </div>
+      <div class="column" align="right">
+        <a href="evento/?id={{ evento.id }}"><button>editar</button></a>
+        <a href="evento/delete/{{ evento.id }}/"><button>excluir</button></a>
+      </div>
+      <hr />
+    </div>
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}
