@@ -24,8 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2&ot!nxik4ch9jz21c^8thk%-%tg-z!m!t7r@)augtex=0*s2b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# # production
+# DEBUG = False
+# ALLOWED_HOSTS = ['*']
+# # development
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -75,6 +78,14 @@ WSGI_APPLICATION = 'hello_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# # SQL LITE (DEFAULT)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# # POSTGRES
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -105,14 +116,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# # US
+# LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
+# # BR
+LANGUAGE_CODE = 'pt-br'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
-USE_TZ = True
-
+# # US
+# USE_TZ = True
+# # BR
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
