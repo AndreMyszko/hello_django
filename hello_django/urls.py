@@ -23,18 +23,20 @@ from rest_framework import routers, serializers, viewsets
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'movies', views.MovieViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    # rest_framework
+    # endpoints rest_framework
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
     # admin
     path('admin/', admin.site.urls),
 
     # redirects
-    path('', RedirectView.as_view(url='/agenda/')),
+    # path('', RedirectView.as_view(url='/agenda/')),
 
     # paths
     # login

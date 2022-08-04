@@ -30,3 +30,11 @@ class Evento(models.Model):
             return True
         else:
             return False
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    desc = models.TextField(blank=True, null=True)
+
+    class Meta():
+        db_table = 'movie'

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Evento
+from core.models import Evento, Movie
 
 # Register your models here.
 
@@ -10,3 +10,11 @@ class EventoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Evento, EventoAdmin)
+
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'desc')
+    list_filter = ('title',)
+
+
+admin.site.register(Movie, MovieAdmin)

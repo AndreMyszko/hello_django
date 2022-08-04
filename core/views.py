@@ -4,11 +4,11 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from core.models import Evento
 from datetime import datetime, timedelta
+from core.models import Evento, Movie
+from core.serialize import GroupSerializer, UserSerializer, MovieSerializer
 from rest_framework import viewsets
 from rest_framework import permissions
-from core.serialize import GroupSerializer, UserSerializer
 
 # Create your views here.
 
@@ -28,6 +28,15 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class MovieViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows movies to be viewed or edited.
+    """
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 

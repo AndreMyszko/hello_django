@@ -1,9 +1,12 @@
 # generals
 *.pyc
+*.cpython-310.pyc
 .idea
 
 #specifics
 hello_django/__pycache__/settings.cpython-310.pyc
-core/__pycache__/views.cpython-310.pyc
-hello_django/__pycache__/settings.cpython-310.pyc
 hello_django/__pycache__/urls.cpython-310.pyc
+core/__pycache__/views.cpython-310.pyc
+core/__pycache__/models.cpython-310.pyc
+core/__pycache__/admin.cpython-310.pyc
+
